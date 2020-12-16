@@ -1,8 +1,13 @@
 import React from "react";
 
 const Card = ({item}) => {
+
+  const handleClick = (e) => {
+    e.preventDefault();
+        console.log('clicked')
+    }
   return (
-    <div>
+    <div className="container">
       <div className="flip-card">
         <div className="flip-card-inner">
           <div className="flip-card-front">
@@ -10,7 +15,7 @@ const Card = ({item}) => {
           </div>
           <div className="flip-card-back">
             <h1>{item.name}</h1>
-            <button>Learn more</button>
+            <button onClick= {handleClick}>Learn more</button>
           </div>
         </div>
       </div>
