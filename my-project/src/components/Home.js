@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 
 const Home = () => {
-    const [data, setData] = useState('hamida')
+    const [data, setData] = useState()
 
     useEffect(() => {
      fetchData()
@@ -13,8 +13,9 @@ const Home = () => {
         const data = await response.json()
 
         console.log(data)
+        setData(data)
 
-    }
+    };
     
 
 
@@ -23,22 +24,7 @@ const Home = () => {
       <input></input>
       <button>Search</button>
 
-      <div className="flip-card">
-        <div className="flip-card-inner">
-          <div className="flip-card-front">
-            <img
-              src="img_avatar.png"
-              alt="Avatar"
-              
-            />
-          </div>
-          <div className="flip-card-back">
-            <h1>hi</h1>
-            <p>Architect & Engineer</p>
-            <p>We love that guy</p>
-          </div>
-        </div>
-      </div>
+     
     </div>
   );
 };
