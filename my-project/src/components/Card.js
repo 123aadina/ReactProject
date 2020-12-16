@@ -6,12 +6,11 @@ const Card = ({item}) => {
       <div className="flip-card">
         <div className="flip-card-inner">
           <div className="flip-card-front">
-            <img src="img_avatar.png" alt="Avatar" />
+            <img src={item.image} alt="Avatar" />
           </div>
           <div className="flip-card-back">
             <h1>{item.name}</h1>
-            <p>Architect & Engineer</p>
-            <p>We love that guy</p>
+            <button>Learn more</button>
           </div>
         </div>
       </div>
