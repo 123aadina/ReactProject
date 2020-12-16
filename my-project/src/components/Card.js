@@ -1,8 +1,10 @@
-import React from "react";
+import React, {useState} from "react";
+import  Container from 'react-bootstrap/Container';
 
 
 
 const Card = ({item}) => {
+    const [isShown, setIsShown] = useState(false)
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -12,9 +14,9 @@ const Card = ({item}) => {
 
   return (
     <div>
-      <div style = {style}>
-        <div style = {myStyle}>
-          <div >
+      <div className="flip-card" >
+        <div className="flip-card-inner">
+          <div className="flip-card-front">
             <img src={item.image} alt="Avatar" />
           </div>
           <div className="flip-card-back">
@@ -27,7 +29,7 @@ const Card = ({item}) => {
   );
 };
 
-const style = {
+/* const style = {
     backgroundColor: 'transparent',
     width: '300px',
     height: '200px',
@@ -43,7 +45,7 @@ const myStyle = {
     textAlign: 'center',
     transition: 'transform 0.8s',
     transformStyle:' preserve-3d'
-}
+} */
 
 
 
