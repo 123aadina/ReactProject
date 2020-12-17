@@ -18,12 +18,13 @@ body {
 
 
 
-.flipCard {
-  background-color: transparent;
-  width: 200px;
-  height: 200px;
+.flipard {
+  /* background-color: transparent; */
+ /*  width: 200px; */
+  /* height: 200px; */
   border: 1px solid red;
-  perspective: 1000px;
+  
+ /*  perspective: 1000px; */
   
 };
  /* Remove this if you don't want the 3D effect */

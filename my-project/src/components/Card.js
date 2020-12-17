@@ -11,12 +11,13 @@ const Card = ({item}) => {
 
 
   return (
-      <div style= {style} className="flipCard" >
+      <div style= {style} className="flip-card" >
         <div style= {myStyle} className="flip-card-inner">
           <div style= {bothStyle}  className="flip-card-front">
             <img  style= {overStyle}  src={item.image} alt="Avatar"  width="200" height="200" className='imageCard'
              />
           </div>
+
             <div style= {bothStyle}  className="flip-card-back">
             <h1>{item.name}</h1>
             <button onClick= {handleClick}>Learn more</button>
@@ -29,14 +30,14 @@ const Card = ({item}) => {
 };
 
 
-  const style = {
+ const style = {
     backgroundColor: 'transparent',
     width: '200px',
     height: '200px',
-    border: '1px solid #f1f1f1',
+   /*  border: '1px solid #f1f1f1', */
     perspective: '1000px',
-    /*transform: 'rotateY(120deg)',  */  
-}; 
+   /*  transform: 'rotateY(120deg)', */
+};
 
 
 const myStyle = {
