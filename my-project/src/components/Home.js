@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import  Card from './Card';
 
+
 const Home = () => {
   const [data, setData] = useState();
 
@@ -19,9 +20,10 @@ const Home = () => {
   };
 
   return (
-    <div>
+    <div className='container text-center d-flex flex-column'>
       <input></input>
       <button>Search</button>
+     
       <h1>List</h1>
       {data && data.map((item) => {
           return (
