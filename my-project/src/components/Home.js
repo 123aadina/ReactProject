@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import  Card from './Card';
-
+import Card from "./Card";
 
 const Home = () => {
   const [data, setData] = useState();
@@ -16,24 +15,19 @@ const Home = () => {
     console.log(data.results);
     setData(data.results);
 
-    console.log(data , 'DATA');
+    console.log(data, "DATA");
   };
 
   return (
-    <div className='container text-center d-flex flex-column'>
-      <input></input>
-      <button>Search</button>
-     
-      <h1>List</h1>
-      {data && data.map((item) => {
-          return (
-            <Card item={item} key={item._id} />
-             
-          )
-      })}
+    <div className="flexContainer">
+      {data &&
+        data.map((item) => {
+          return <Card item={item} key={item._id} />;
+        })}
     </div>
   );
 };
+
 export default Home;
 
 /* style="width:300px;height:300px;" */
