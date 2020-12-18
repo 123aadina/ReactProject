@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 
 
 const Card = ({item}) => {
@@ -29,7 +29,7 @@ const Card = ({item}) => {
   );
 };
 
-
+//flip-card
  const style = {
     backgroundColor: 'transparent',
     width: '200px',
@@ -39,7 +39,7 @@ const Card = ({item}) => {
    
 };
 
-
+//flip-card-inner
 const myStyle = {
     position: 'relative',
     width: '100%',
@@ -47,8 +47,9 @@ const myStyle = {
     textAlign: 'center',
     transition: 'transform 0.8s',
     transformStyle:' preserve-3d'
-} 
+};
 
+//flip-card-front
 const bothStyle = {
   position: 'absolute',
   width: '100%',
