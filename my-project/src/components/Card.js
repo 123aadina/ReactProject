@@ -1,35 +1,34 @@
 import React from "react";
 
-
-const Card = ({item}) => {
-    
-
+const Card = ({ item }) => {
   const handleClick = (e) => {
     e.preventDefault();
-        console.log('clicked')
-    };
-
+    console.log("clicked");
+  };
 
   return (
-      <div style= {style} className="flip-card" >
-        <div style= {myStyle} className="flip-card-inner">
-          <div style= {bothStyle}  className="flip-card-front">
-            <img  style= {overStyle}  src={item.image} alt="Avatar"  width="200" height="200" className='imageCard'
-             />
-          </div>
+    <div className="flip-card">
+      <div className="flip-card-inner">
+        <div className="flip-card-front">
+          <img
+            src={item.image}
+            alt="Avatar"
+            width="200"
+            height="200"
+            className="imageCard"
+          />
+        </div>
 
-            <div style= {bothStyle}  className="flip-card-back">
-            <h1>{item.name}</h1>
-            <button onClick= {handleClick}>Learn more</button>
-          </div>
-        
+        <div className="flip-card-back">
+          <h1>{item.name}</h1>
+          <button onClick={handleClick}>Learn more</button>
         </div>
       </div>
-    
+    </div>
   );
 };
 
-//flip-card
+/* //flip-card
  const style = {
     backgroundColor: 'transparent',
     width: '200px',
@@ -64,13 +63,9 @@ const bothStyle = {
 const overStyle = {
   transform: 'rotateY(180deg)',
  
-}
+} */
 
 export default Card;
-
-
-
-
 
 /* const hoverStyle = {
  backfaceVisibility: 'hidden'
@@ -82,9 +77,6 @@ hover:
   
    onMouseEnter={() => setIsShown(true)}
              onMouseLeave={() => setIsShown(false)}*/
-
-
-
 
 /* 
 <div style = {style}>
