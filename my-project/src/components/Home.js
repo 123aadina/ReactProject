@@ -30,4 +30,4 @@ const Home = () => {
 
 export default Home;
 
-/* style="width:300px;height:300px;" */
+
