@@ -2,7 +2,7 @@ import React, {useState} from "react";
 
 
 const Card = ({item}) => {
-    const [isShown, setIsShown] = useState(false)
+    
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -34,16 +34,16 @@ const Card = ({item}) => {
     backgroundColor: 'transparent',
     width: '200px',
     height: '200px',
-   /*  border: '1px solid #f1f1f1', */
+    border: '2px solid red',
     perspective: '1000px',
-   /*  transform: 'rotateY(120deg)', */
+   
 };
 
 
 const myStyle = {
     position: 'relative',
-  /*   width: '100%', */
-   /*  height: '100%', */
+    width: '100%',
+    height: '100%',
     textAlign: 'center',
     transition: 'transform 0.8s',
     transformStyle:' preserve-3d'
@@ -51,9 +51,9 @@ const myStyle = {
 
 const bothStyle = {
   position: 'absolute',
-/*   width: '100%', */
- /*  height: '100%', */
- /*  -webkit-backface-visibility: hidden;  */
+  width: '100%',
+  height: '100%',
+  webkitBackfacevisibility: 'hidden',
   backfaceVisibility: 'hidden',
   backgroundColor: '#bbb',
   color: 'black'
