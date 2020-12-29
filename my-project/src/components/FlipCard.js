@@ -3,7 +3,8 @@ import { Button } from 'react-bootstrap';
 import { Card } from 'react-bootstrap';
 
 const FlipCard = ({ item }) => {
-   const [data, setData] = useState();
+ /*   const [status, setStatus] = useState(); */
+ const [data, setData] = useState();
 
 
     useEffect(() => {
@@ -24,19 +25,23 @@ const FlipCard = ({ item }) => {
 
   return (
     <div>
-     <h1>{item.name}</h1>
-     <div>
-     <img
-            src={item.image}
-            alt="Avatar"
-            width="300"
-            height="300"
-            className="imageCard"
-          />
-     </div>
-     <div>{item.species}</div>
-     <div>{item.status}</div>
-     <button>closed</button>
+      {data && data.map((item, id) => {
+        return (   
+                <h1>{item.name}</h1>
+                <div>
+                <img
+                  src={item.image}
+                  alt="Avatar"
+                  width="300"
+                  height="300"
+                  className="imageCard"
+                  />
+                  </div>
+                <div>{item.species}</div>
+                <div>{item.status}</div>
+                <button>closed</button>
+        );
+      })}
     </div>
   );
 };
