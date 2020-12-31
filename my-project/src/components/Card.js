@@ -1,14 +1,22 @@
-import React from "react";
-import { Link } from "react-router-dom";
-/* import FlipCard from "./FlipCard"; */
+import React, {useState} from "react";
+/* import { Link } from "react-router-dom"; */
+import BackCard from "./BackCard";
+
 
 const Card = ({ item }) => {
- 
+  /* const [character, setCharacter] = useState({}); */
+/*   const [isClick, setIsClick] = useState(false); */
+
  /*  const handleClick = (e) => {
-    e.preventDefault();
-    console.log('hi')
-    onClick={handleClick}
+    console.log('object', item.name)
+    setCharacter(item.name)
+
   }; */
+
+  const isClicked = () => {
+    /* setClick((prev) => !prev) */
+    alert(`Hi ${item.name}\n Species: ${item.species}\n Status: ${item.status}`)
+      };
 
   return (
     <div className="flip-card">
@@ -22,47 +30,12 @@ const Card = ({ item }) => {
             className="imageCard"
           />
         </div>
-
         <div className="flip-card-back">
           <h1>{item.name}</h1>
-          <button >
-
-         {/*  <Link
-                    className="text-decoration-none text-darker justify-content-center text-dark"
-                    to={{
-                      pathname: "/FlipCard",
-                      state: {
-                        data: data,
-                      },
-                    }}
-                  >
-                    {data.title}
-                  </Link> */}
-         {/*  <a
-            href={<FlipCard />}
-            target="_blank"
-            className="text-light text-decoration-none"
-          >
-            Learn more
-          </a> */}
-            
-            
+          <button onClick={isClicked}>
             Learn more
           </button>
-          {/*  <h1>{item.name}</h1>
-          <div>
-            <img
-              src={item.image}
-              alt="Avatar"
-              width="300"
-              height="300"
-              className="imageCard"
-            />
-          </div>
-          <div>{item.species}</div>
-          <div>{item.status}</div>
-          <button>closed</button>  */}
-          {/* <FlipCard /> */}
+          
         </div>
       </div>
     </div>
@@ -70,3 +43,12 @@ const Card = ({ item }) => {
 };
 
 export default Card;
+
+
+
+
+
+
+
+
+ 
