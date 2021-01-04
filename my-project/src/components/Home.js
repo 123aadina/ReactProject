@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Card from "./Card";
-/* import FlipCard from "./FlipCard"; */
+import FlipCard from "./FlipCard";
 
 const Home = () => {
   const [data, setData] = useState();
+  const [selected, setSelected] = useState();
 
 
   useEffect(() => {
@@ -20,14 +21,15 @@ const Home = () => {
     console.log(data, "DATA");
   };
 
+  console.log('selected', selected)
   return (
     <div className="flexContainer">
-      { data &&
+      { data && !selected &&
         data.map((item, id) => {
-          return <Card item={item} key={item._id} />;
-        })};
-
-      {/*  <FlipCard/> */}
+          return <Card item={item} key={item._id} setSelected={setSelected} />
+        })} 
+        {selected && <FlipCard id={selected.id} setSelected={setSelected} />}
+       
     </div>
   );
 };

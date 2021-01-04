@@ -1,22 +1,12 @@
 import React, {useState} from "react";
-/* import { Link } from "react-router-dom"; */
+import { Link } from "react-router-dom";
 import BackCard from "./BackCard";
+/* import {Alert} from 'react-bootstrap' */
+/* import { Prev } from "react-bootstrap/esm/PageItem"; */
 
 
-const Card = ({ item }) => {
-  /* const [character, setCharacter] = useState({}); */
-/*   const [isClick, setIsClick] = useState(false); */
+const Card = ({ item , setSelected}) => {
 
- /*  const handleClick = (e) => {
-    console.log('object', item.name)
-    setCharacter(item.name)
-
-  }; */
-
-  const isClicked = () => {
-    /* setClick((prev) => !prev) */
-    alert(`Hi ${item.name}\n Species: ${item.species}\n Status: ${item.status}`)
-      };
 
   return (
     <div className="flip-card">
@@ -32,10 +22,10 @@ const Card = ({ item }) => {
         </div>
         <div className="flip-card-back">
           <h1>{item.name}</h1>
-          <button onClick={isClicked}>
-            Learn more
-          </button>
-          
+          <button onClick={() => setSelected(item)}>
+         
+         Learn more
+         </button>
         </div>
       </div>
     </div>
@@ -45,6 +35,46 @@ const Card = ({ item }) => {
 export default Card;
 
 
+
+
+
+ {/* <Link
+                    className="text-decoration-none text-darker justify-content-center text-dark"
+                    to={{
+                      pathname: "/backCard",
+                      state: {
+                        item: item,
+                      },
+                    }}
+                  >
+                    {item.name}
+                    Learn more
+              </Link> */}
+         {/*  <button onClick={}>
+            Learn more
+          </button> */}
+         {/*  <Alert isOpen={visible} toggle={toggle}>Hi </Alert> */}
+
+
+
+
+         /*  const [visible, setVisible] = useState(false); */
+/*   const [isClick, setIsClick] = useState(false); */
+
+ /*  const handleClick = (e) => {
+    console.log('object', item.name)
+    setCharacter(item.name)
+
+  }; */
+
+ /*  const isClicked = () => {
+     setClick((prev) => !prev) 
+    alert(`Hi ${item.name}\n Species: ${item.species}\n Status: ${item.status}`)
+      }; */
+
+   /*  const toggle= () => {
+        setVisible((Prev) => !Prev)
+      } */
 
 
 

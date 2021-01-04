@@ -4,34 +4,41 @@ import { Card } from 'react-bootstrap'; */
 import BackCard from "./BackCard";
 
 
-const FlipCard = () => {
+const FlipCard = ({id, setSelected}) => {
   const [character, setCharacter] = useState({});
-  const [data, setData] = useState();
+ 
 
   useEffect(() => {
     fetchCharacter();
   }, []);
 
   const fetchCharacter = async () => {
-    const response = await fetch("https://rickandmortyapi.com/api/character/2");
+    const response = await fetch(`https://rickandmortyapi.com/api/character/${id}`);
     const data = await response.json();
 
     console.log(data);
     setCharacter(data);
 
-    console.log(data, "DATA");
+    console.log(character, "DATA");
   };
   return (
     <div>
-      <h1> HI
-       {/*  <BackCard /> */}
-      </h1>
-
-      {data && data.map((item, id) => {
-            return (
-              <h1>{item.name}</h1>
-            )
-          })}
+     { character && <div>
+      <h1> { character.name} </h1>
+      <div>
+                <img
+                  src={character.image}
+                  alt="Avatar"
+                  width="300"
+                  height="300"
+                  className="imageCard"
+                  />
+                  </div>
+                <div>{character.species}</div>
+                <div>{character.status}</div>
+                <button>closed</button>
+                </div>}
+      <button onClick={()=>  setSelected( )}>back</button>
       
     </div>
   );
@@ -42,6 +49,8 @@ export default FlipCard;
 
 
 /* return <BackCard item={item} key={item._id} */
+
+  {/*  <BackCard /> */}
 
 
 
