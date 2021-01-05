@@ -6,7 +6,7 @@ import Search from "./Search";
 const Home = () => {
   const [data, setData] = useState();
   const [selected, setSelected] = useState();
-  const [searched, setSearched] = useState("");
+ /*  const [searched, setSearched] = useState(""); */
   const [input, setInput] = useState('');
 
   useEffect(() => {
@@ -19,10 +19,11 @@ const Home = () => {
 
     console.log(data.results);
     setData(data.results);
+    /* setInput(data.results) */
 
     console.log(data, "DATA");
   };
-  console.log("searched", searched);
+  console.log("input", input);
   console.log("selected", selected);
 
   const filterData = () => {
@@ -35,35 +36,23 @@ const Home = () => {
 
   return (
     <div>
-      <div className="baner">
+      {/* <div className="baner">
         <div className="header">
+        {input && (
+            <h1> {input.name} </h1> 
           
-          {/* <input
-          type="text"
-          value=""
-          id="search-input"
-          placeholder="Search..."
-          onChange={handleOnInputChange} 
-        /> */}
-          {input && (
-            <h1> {input.name} </h1>
-            /*  <div>
-             <img
-               src={input.image}
-               alt="Avatar"
-               width="300"
-               height="300"
-               className="imageCard"
-             />
-           </div> */
-          )}
-          <input value={input} onInput={(e) => setInput(e.target.value)} />
-          <button onClick={() => setSearched()}>Search</button>
+           )}
+          <input value={input} onChange={(e) => setInput(e.target.value)} />
+          
         </div>
-      </div>
-      {/* searched &&  */
-      /* id={searched.id} */}{" "}
-      {/* {<Search setSearched={setSearched}  />} */}
+      </div>  */} 
+      {<Search filterData={(value)=> setInput(value)}  />}
+      {/* {<Search filterData={(input)=> setInput(input)}  />}  */}
+      {/* {<Search onChange={(value)=> setInput(value)}  />}  */} 
+      {/* {<Search filterData={filterData}  />}   */}
+      {input}
+     {/*  {<Search  setInput={setInput} filterData={filterData}  />} */}
+
       <div className="flexContainer">
         {data &&
           !selected &&
@@ -79,3 +68,6 @@ const Home = () => {
 };
 
 export default Home;
+
+
+{/* <button onClick={() => setSearched()}>Search</button> */}
