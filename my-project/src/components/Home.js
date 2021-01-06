@@ -6,7 +6,6 @@ import Search from "./Search";
 const Home = () => {
   const [data, setData] = useState();
   const [selected, setSelected] = useState();
-  /* const [input, setInput] = useState(); */
   const [arrowCounter, setArrowarrowCounter] = useState(1)
   
   //fething the data
@@ -24,66 +23,16 @@ const Home = () => {
     console.log(data, "DATA");
   };
 
+  //changing the page according to the function
  const arrowHandle = (n) => {
   setArrowarrowCounter(arrowCounter + n)
 }
 
-
-
-
-/* 
-  console.log("input", input); */
   console.log("selected", selected);
 
-  /*  const fetchName = async () => {
-    const response = await fetch(`https://rickandmortyapi.com/api/character/?name=${input}`);
-    const data = await response.json();
-
-    console.log(data.results);
-    setInput(data.results);
-    
-    console.log(data, "DATA");
-  }; */
- 
-
-/*   const filterName = async ()=> {
-    if(input ===''){
-      return data
-    }else {
-      
-      const response = await fetch(`https://rickandmortyapi.com/api/character/?name=${input}`);
-    const data = await response.json();
-
-    console.log(data.results);
-    return data.results
-      
-   
-    };
-  };  */
-
-  //filter the character accroding to the name
-  /* const filterData = () => {
-    if(input ===''){
-      return data
-    }else {
-      return data.filter((item) => item.name.toLowerCase().includes(input.toLocaleLowerCase()))
-    };
-  };
- */
   return (
     <div>
-     { /** searchbar from the home page working*/}
-      {/* <div className="baner">
-        <div className="header">
-          <input value={input} onChange={(e) => setInput(e.target.value)} />
-        </div>
-      </div> */} 
-
-      { /** searchbar passing data from child to the parent*/}
-      {/* {<Search filterData={(value)=> setInput(value)}  />} */}
-      {/*  */}
-     
-      <Search /* filterData={(value)=> setInput(value)} */   fetchData={(value)=> fetchData(value)}  />
+      <Search fetchData={(value)=> fetchData(value)} />
       <div className="flexContainer">
         {data &&
           !selected &&
@@ -101,6 +50,3 @@ const Home = () => {
 };
 
 export default Home;
-
-
-

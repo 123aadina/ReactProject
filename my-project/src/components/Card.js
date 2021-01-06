@@ -27,21 +27,4 @@ const Card = ({ item , setSelected}) => {
 };
 
 export default Card;
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
  
